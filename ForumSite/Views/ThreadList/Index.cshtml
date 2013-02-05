@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DomainObjects.ThreadEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            ThreadId
+        </th>
+        <th>
+            Subject
+        </th>
+        <th>
+            Message
+        </th>
+        <th>
+            DatePosted
+        </th>
+        <th>
+            Tag
+        </th>
+        <th>
+            UserId
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThreadId)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Subject)*@
+            @Html.ActionLink(item.Subject,"Thread", new {threadId = item.ThreadId })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatePosted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

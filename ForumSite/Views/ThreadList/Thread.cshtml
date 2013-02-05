@@ -1,0 +1,45 @@
+﻿@model DomainObjects.ThreadEntity
+
+@{
+    ViewBag.Title = "Thread";
+}
+
+<h2>Thread</h2>
+
+<fieldset>
+    <legend>ThreadEntity</legend>
+
+    <div class="display-label">ThreadId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThreadId)
+    </div>
+
+    <div class="display-label">Subject</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Subject)
+    </div>
+
+    <div class="display-label">Message</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+
+    <div class="display-label">DatePosted</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DatePosted)
+    </div>
+
+    <div class="display-label">Tag</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tag)
+    </div>
+
+    <div class="display-label">UserId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
